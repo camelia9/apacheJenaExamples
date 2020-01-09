@@ -1,0 +1,10 @@
+@prefix schema: <http://schema.org/> .
+@prefix : <http://wade-example.org/> .
+
+:John a schema:Person .
+:Bill a schema:Person .
+
+:John :hasClass :Wade .
+:Bill :teaches :Wade .
+
+

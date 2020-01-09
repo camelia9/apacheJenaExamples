@@ -1,0 +1,7 @@
+@prefix schema: <http://schema.org/> .
+@prefix : <http://wade-example.org/> .
+
+[ruleHasStudent: (?s :hasClass ?c) (?p :teaches ?c) -> (?p :hasStudent ?s)]
+
+
+

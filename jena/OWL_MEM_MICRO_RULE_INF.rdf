@@ -1,0 +1,47 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:mi="http://www.marine.ie/SemanticFishData#">
+  <owl:Class rdf:about="http://www.marine.ie/SemanticFishData#PelagicSpecies">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.marine.ie/SemanticFishData#SpeciesType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.marine.ie/SemanticFishData#PelagicSample">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.marine.ie/SemanticFishData#PelagicSpecies"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.marine.ie/SemanticFishData#isOfSpecies"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.marine.ie/SemanticFishData#SamplingSummary"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.marine.ie/SemanticFishData#SamplingSummary">
+    <rdfs:comment>A class to summarise sampling activity</rdfs:comment>
+  </owl:Class>
+  <mi:SamplingSummary rdf:about="http://www.marine.ie/SemanticFishData#123">
+    <mi:isOfSpecies>
+      <mi:SpeciesType rdf:about="http://www.marine.ie/SemanticFishData#SpeciesA">
+        <owl:sameAs>
+          <mi:OtherSpeciesType rdf:about="http://www.marine.ie/SemanticFishData#Species1"/>
+        </owl:sameAs>
+      </mi:SpeciesType>
+    </mi:isOfSpecies>
+  </mi:SamplingSummary>
+  <mi:SamplingSummary rdf:about="http://www.marine.ie/SemanticFishData#124">
+    <mi:isOfSpecies>
+      <mi:PelagicSpecies rdf:about="http://www.marine.ie/SemanticFishData#SpeciesB">
+        <rdf:type rdf:resource="http://www.marine.ie/SemanticFishData#SpeciesType"/>
+      </mi:PelagicSpecies>
+    </mi:isOfSpecies>
+  </mi:SamplingSummary>
+  <mi:OtherSpeciesType rdf:about="http://www.marine.ie/SemanticFishData#Species2">
+    <owl:sameAs rdf:resource="http://www.marine.ie/SemanticFishData#Species1"/>
+  </mi:OtherSpeciesType>
+</rdf:RDF>

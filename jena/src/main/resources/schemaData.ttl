@@ -1,0 +1,13 @@
+@prefix schema: <http://schema.org/> .
+@prefix md: <http://www.w3.org/ns/md#> .
+
+_:org a schema:Organization;
+   schema:name "Cryptography Users";
+   schema:member _:role .
+_:role a schema:OrganizationRole;
+   schema:startDate "1977";
+   schema:member _:person;
+   schema:memberOf _:org .
+_:person a schema:Person;
+   schema:name "Alice";
+   schema:memberOf _:role .
